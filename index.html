@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Calculator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.0/math.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+
+  <div class="flex justify-center items-center min-h-screen">
+    <div class="w-full max-w-sm p-6 bg-gradient-to-br from-gray-800 via-gray-900 to-black rounded-3xl shadow-2xl animate__animated animate__fadeIn">
+      <input id="display" type="text" class="w-full p-4 text-3xl text-right text-gray-200 bg-gray-800 rounded-xl border-2 border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500" readonly />
+
+      <!-- Theme Toggle Button -->
+      <button onclick="toggleTheme()" class="absolute top-4 right-4 p-2 text-white bg-gray-700 rounded-full hover:bg-gray-600">
+        🌙/☀️
+      </button>
+
+      <!-- Calculator Buttons -->
+      <div class="grid grid-cols-4 gap-4 mt-6">
+        <button class="p-4 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="appendToDisplay('7')">7</button>
+        <button class="p-4 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="appendToDisplay('8')">8</button>
+        <button class="p-4 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="appendToDisplay('9')">9</button>
+        <button class="p-4 bg-blue-600 text-white rounded-lg hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="appendToDisplay('/')">/</button>
+
+        <button class="p-4 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="appendToDisplay('4')">4</button>
+        <button class="p-4 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="appendToDisplay('5')">5</button>
+        <button class="p-4 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="appendToDisplay('6')">6</button>
+        <button class="p-4 bg-blue-600 text-white rounded-lg hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="appendToDisplay('*')">*</button>
+
+        <button class="p-4 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="appendToDisplay('1')">1</button>
+        <button class="p-4 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="appendToDisplay('2')">2</button>
+        <button class="p-4 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="appendToDisplay('3')">3</button>
+        <button class="p-4 bg-blue-600 text-white rounded-lg hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="appendToDisplay('-')">-</button>
+
+        <button class="p-4 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="appendToDisplay('0')">0</button>
+        <button class="p-4 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="appendToDisplay('.')">.</button>
+        <button class="p-4 bg-red-600 text-white rounded-lg hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="clearDisplay()">C</button>
+        <button class="p-4 bg-blue-600 text-white rounded-lg hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="appendToDisplay('+')">+</button>
+
+        <button class="col-span-4 p-4 bg-green-600 text-white rounded-lg hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="calculate()">=</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
